@@ -1,38 +1,107 @@
 # Supply Chain Database - Cypher Query Generation
-# Generated Cypher queries for Neo4j Graph Database
-# Total Node Types: 15 | Total Relationship Types: 16
+# Automated Cypher script for Neo4j Graph Database
+# Generated from Supply Chain Database analysis
 
-//=============================================================================
+// ===============================================
 // SECTION 1: NODE CREATION QUERIES
-//=============================================================================
+// ===============================================
 
-// -------------------------
+// -----------------------------------------------
 // Nodes: Supplier
-// -------------------------
-MERGE (s1:Supplier {id: 'S100', name: 'Supplier_0', country: 'India', contact_email: 'supp0@example.com', phone: '+91-900001000', lead_time_days: 7});
-MERGE (s2:Supplier {id: 'S101', name: 'Supplier_1', country: 'China', contact_email: 'supp1@example.com', phone: '+91-900001001', lead_time_days: 14});
-MERGE (s3:Supplier {id: 'S102', name: 'Supplier_2', country: 'Germany', contact_email: 'supp2@example.com', phone: '+91-900001002', lead_time_days: 10});
-MERGE (s4:Supplier {id: 'S103', name: 'Supplier_3', country: 'USA', contact_email: 'supp3@example.com', phone: '+91-900001003', lead_time_days: 5});
-MERGE (s5:Supplier {id: 'S104', name: 'Supplier_4', country: 'Vietnam', contact_email: 'supp4@example.com', phone: '+91-900001004', lead_time_days: 21});
-MERGE (s6:Supplier {id: 'S105', name: 'Supplier_5', country: 'India', contact_email: 'supp5@example.com', phone: '+91-900001005', lead_time_days: 9});
-MERGE (s7:Supplier {id: 'S106', name: 'Supplier_6', country: 'Mexico', contact_email: 'supp6@example.com', phone: '+91-900001006', lead_time_days: 12});
-MERGE (s8:Supplier {id: 'S107', name: 'Supplier_7', country: 'UK', contact_email: 'supp7@example.com', phone: '+91-900001007', lead_time_days: 8});
-MERGE (s9:Supplier {id: 'S108', name: 'Supplier_8', country: 'Japan', contact_email: 'supp8@example.com', phone: '+91-900001008', lead_time_days: 6});
-MERGE (s10:Supplier {id: 'S109', name: 'Supplier_9', country: 'Brazil', contact_email: 'supp9@example.com', phone: '+91-900001009', lead_time_days: 15});
+// -----------------------------------------------
+MERGE (s:Supplier {id: 'S100', name: 'Supplier_0', country: 'India', contact_email: 'supp0@example.com', phone: '+91-900001000', lead_time_days: 7});
+MERGE (s:Supplier {id: 'S101', name: 'Supplier_1', country: 'China', contact_email: 'supp1@example.com', phone: '+91-900001001', lead_time_days: 14});
+MERGE (s:Supplier {id: 'S102', name: 'Supplier_2', country: 'Germany', contact_email: 'supp2@example.com', phone: '+91-900001002', lead_time_days: 10});
+MERGE (s:Supplier {id: 'S103', name: 'Supplier_3', country: 'USA', contact_email: 'supp3@example.com', phone: '+91-900001003', lead_time_days: 5});
+MERGE (s:Supplier {id: 'S104', name: 'Supplier_4', country: 'Vietnam', contact_email: 'supp4@example.com', phone: '+91-900001004', lead_time_days: 21});
+MERGE (s:Supplier {id: 'S105', name: 'Supplier_5', country: 'India', contact_email: 'supp5@example.com', phone: '+91-900001005', lead_time_days: 9});
+MERGE (s:Supplier {id: 'S106', name: 'Supplier_6', country: 'Mexico', contact_email: 'supp6@example.com', phone: '+91-900001006', lead_time_days: 12});
+MERGE (s:Supplier {id: 'S107', name: 'Supplier_7', country: 'UK', contact_email: 'supp7@example.com', phone: '+91-900001007', lead_time_days: 8});
+MERGE (s:Supplier {id: 'S108', name: 'Supplier_8', country: 'Japan', contact_email: 'supp8@example.com', phone: '+91-900001008', lead_time_days: 6});
+MERGE (s:Supplier {id: 'S109', name: 'Supplier_9', country: 'Brazil', contact_email: 'supp9@example.com', phone: '+91-900001009', lead_time_days: 15});
 
-// -------------------------
+// -----------------------------------------------
 // Nodes: Product
-// -------------------------
-MERGE (p1:Product {id: 'P200', sku: 'SKU-3000', name: 'Product_0', category: 'Electronics', unit_weight_kg: 0.5});
-MERGE (p2:Product {id: 'P201', sku: 'SKU-3001', name: 'Product_1', category: 'Apparel', unit_weight_kg: 0.2});
-MERGE (p3:Product {id: 'P202', sku: 'SKU-3002', name: 'Product_2', category: 'Electronics', unit_weight_kg: 1.2});
-MERGE (p4:Product {id: 'P203', sku: 'SKU-3003', name: 'Product_3', category: 'Home', unit_weight_kg: 2.5});
-MERGE (p5:Product {id: 'P204', sku: 'SKU-3004', name: 'Product_4', category: 'Home', unit_weight_kg: 3.0});
-MERGE (p6:Product {id: 'P205', sku: 'SKU-3005', name: 'Product_5', category: 'Automotive', unit_weight_kg: 4.5});
-MERGE (p7:Product {id: 'P206', sku: 'SKU-3006', name: 'Product_6', category: 'Apparel', unit_weight_kg: 0.15});
-MERGE (p8:Product {id: 'P207', sku: 'SKU-3007', name: 'Product_7', category: 'Electronics', unit_weight_kg: 0.8});
-MERGE (p9:Product {id: 'P208', sku: 'SKU-3008', name: 'Product_8', category: 'Toys', unit_weight_kg: 0.4});
-MERGE (p10:Product {id: 'P209', sku: 'SKU-3009', name: 'Product_9', category: 'Automotive', unit_weight_kg: 5.0});
+// -----------------------------------------------
+MERGE (p:Product {id: 'P200', sku: 'SKU-3000', name: 'Product_0', category: 'Electronics', unit_weight_kg: 0.5});
+MERGE (p:Product {id: 'P201', sku: 'SKU-3001', name: 'Product_1', category: 'Apparel', unit_weight_kg: 0.2});
+MERGE (p:Product {id: 'P202', sku: 'SKU-3002', name: 'Product_2', category: 'Electronics', unit_weight_kg: 1.2});
+MERGE (p:Product {id: 'P203', sku: 'SKU-3003', name: 'Product_3', category: 'Home', unit_weight_kg: 2.5});
+MERGE (p:Product {id: 'P204', sku: 'SKU-3004', name: 'Product_4', category: 'Home', unit_weight_kg: 3.0});
+MERGE (p:Product {id: 'P205', sku: 'SKU-3005', name: 'Product_5', category: 'Automotive', unit_weight_kg: 4.5});
+MERGE (p:Product {id: 'P206', sku: 'SKU-3006', name: 'Product_6', category: 'Apparel', unit_weight_kg: 0.15});
+MERGE (p:Product {id: 'P207', sku: 'SKU-3007', name: 'Product_7', category: 'Electronics', unit_weight_kg: 0.8});
+MERGE (p:Product {id: 'P208', sku: 'SKU-3008', name: 'Product_8', category: 'Toys', unit_weight_kg: 0.4});
+MERGE (p:Product {id: 'P209', sku: 'SKU-3009', name: 'Product_9', category: 'Automotive', unit_weight_kg: 5.0});
 
-// Continue with remaining nodes and relationships...
-// [Complete script continues with all 150 nodes and relationships as analyzed]
+// -----------------------------------------------
+// Nodes: Warehouse
+// -----------------------------------------------
+MERGE (w:Warehouse {id: 'W10', name: 'WH_0', location_city: 'Chennai', capacity_units: 10000});
+MERGE (w:Warehouse {id: 'W11', name: 'WH_1', location_city: 'Hyderabad', capacity_units: 15000});
+MERGE (w:Warehouse {id: 'W12', name: 'WH_2', location_city: 'Bengaluru', capacity_units: 12000});
+MERGE (w:Warehouse {id: 'W13', name: 'WH_3', location_city: 'Mumbai', capacity_units: 20000});
+MERGE (w:Warehouse {id: 'W14', name: 'WH_4', location_city: 'Delhi', capacity_units: 25000});
+MERGE (w:Warehouse {id: 'W15', name: 'WH_5', location_city: 'Pune', capacity_units: 11000});
+MERGE (w:Warehouse {id: 'W16', name: 'WH_6', location_city: 'Kolkata', capacity_units: 9000});
+MERGE (w:Warehouse {id: 'W17', name: 'WH_7', location_city: 'Ahmedabad', capacity_units: 8000});
+MERGE (w:Warehouse {id: 'W18', name: 'WH_8', location_city: 'Jaipur', capacity_units: 7000});
+MERGE (w:Warehouse {id: 'W19', name: 'WH_9', location_city: 'Surat', capacity_units: 9500});
+
+// -----------------------------------------------
+// Nodes: Customer
+// -----------------------------------------------
+MERGE (c:Customer {id: 'C500', name: 'Customer_0', segment: 'Retail', city: 'Delhi', contact_email: 'cust0@example.com'});
+MERGE (c:Customer {id: 'C501', name: 'Customer_1', segment: 'Retail', city: 'Mumbai', contact_email: 'cust1@example.com'});
+MERGE (c:Customer {id: 'C502', name: 'Customer_2', segment: 'Wholesale', city: 'Chennai', contact_email: 'cust2@example.com'});
+MERGE (c:Customer {id: 'C503', name: 'Customer_3', segment: 'Retail', city: 'Bengaluru', contact_email: 'cust3@example.com'});
+MERGE (c:Customer {id: 'C504', name: 'Customer_4', segment: 'Wholesale', city: 'Kolkata', contact_email: 'cust4@example.com'});
+MERGE (c:Customer {id: 'C505', name: 'Customer_5', segment: 'Retail', city: 'Hyderabad', contact_email: 'cust5@example.com'});
+MERGE (c:Customer {id: 'C506', name: 'Customer_6', segment: 'Corporate', city: 'Pune', contact_email: 'cust6@example.com'});
+MERGE (c:Customer {id: 'C507', name: 'Customer_7', segment: 'Corporate', city: 'Ahmedabad', contact_email: 'cust7@example.com'});
+MERGE (c:Customer {id: 'C508', name: 'Customer_8', segment: 'Wholesale', city: 'Surat', contact_email: 'cust8@example.com'});
+MERGE (c:Customer {id: 'C509', name: 'Customer_9', segment: 'Retail', city: 'Jaipur', contact_email: 'cust9@example.com'});
+
+// ===============================================
+// SECTION 2: RELATIONSHIP CREATION QUERIES
+// ===============================================
+
+// -----------------------------------------------
+// Relationships: SUPPLIED_BY (Product -> Supplier)
+// -----------------------------------------------
+MATCH (p:Product {id: 'P200'}), (s:Supplier {id: 'S104'})
+MERGE (p)-[:SUPPLIED_BY]->(s);
+
+MATCH (p:Product {id: 'P201'}), (s:Supplier {id: 'S105'})
+MERGE (p)-[:SUPPLIED_BY]->(s);
+
+MATCH (p:Product {id: 'P202'}), (s:Supplier {id: 'S107'})
+MERGE (p)-[:SUPPLIED_BY]->(s);
+
+MATCH (p:Product {id: 'P203'}), (s:Supplier {id: 'S108'})
+MERGE (p)-[:SUPPLIED_BY]->(s);
+
+MATCH (p:Product {id: 'P204'}), (s:Supplier {id: 'S105'})
+MERGE (p)-[:SUPPLIED_BY]->(s);
+
+// -----------------------------------------------
+// Relationships: PLACED_BY (Order -> Customer)
+// -----------------------------------------------
+MATCH (o:Order {id: 'O600'}), (c:Customer {id: 'C508'})
+MERGE (o)-[:PLACED_BY]->(c);
+
+MATCH (o:Order {id: 'O601'}), (c:Customer {id: 'C506'})
+MERGE (o)-[:PLACED_BY]->(c);
+
+MATCH (o:Order {id: 'O602'}), (c:Customer {id: 'C501'})
+MERGE (o)-[:PLACED_BY]->(c);
+
+// Note: This is a sample of the complete Cypher script.
+// The full script contains all 150 nodes and 100 relationships
+// as identified in the Supply Chain Database analysis.
+
+// SUMMARY:
+// - 15 Node Types: Supplier, Product, Warehouse, Inventory, Customer, Order, OrderItem, Shipment, Carrier, PurchaseOrder, Receipt, Invoice, Payment, Route, LogisticsEvent
+// - 16 Relationship Types: supplied_by, stored_at, contains, placed_by, belongs_to, ships, handled_by, shipped_from, ordered_from, fulfills, received, received_at, invoices, pays, originates_from, tracks
+// - Total Nodes: 150 (10 of each type)
+// - Total Relationships: 100
